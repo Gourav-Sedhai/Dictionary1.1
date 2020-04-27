@@ -29,7 +29,6 @@ def dictionary():
         elif len(get_close_matches(word, data.keys())) > 0:
             getWord = get_close_matches(word, data.keys())[0]
             ask = tkinter.messagebox.askquestion("Word not found", "Trying to search %s? " % getWord)
-            # ask = ask.lower()
             if ask == 'yes':
                 txt.delete("1.0", END)
                 txt.insert(END, data[getWord])
