@@ -27,12 +27,12 @@ def dictionary():
             txt.delete("1.0", END)
             txt.insert(END, data[word.upper()])   
         elif len(get_close_matches(word, data.keys())) > 0:
-            ask = tkinter.messagebox.askquestion("Word not found", "Trying to search %s? " % get_close_matches(word, data.keys())[0])
+            getWord = get_close_matches(word, data.keys())[0]
+            ask = tkinter.messagebox.askquestion("Word not found", "Trying to search %s? " % getWord)
             # ask = ask.lower()
             if ask == 'yes':
-                def exception():
-                    txt.delete("1.0", END)
-                    txt.insert(END, data[word])
+                txt.delete("1.0", END)
+                txt.insert(END, data[getWord])
             else:
                 tkinter.messagebox.showerror("No such word", "There is no such word as %s " % word)
         else:
